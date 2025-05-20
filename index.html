@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+<h1 id="result">Loading...</h1>
+
+<script>
+fetch('/check-ip')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('result').innerText = data.code;
+  })
+  .catch(() => {
+    document.getElementById('result').innerText = 'Error fetching data';
+  });
+</script>
+</body>
+</html>
