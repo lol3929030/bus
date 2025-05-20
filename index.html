@@ -7,10 +7,10 @@
 <h1 id="result">Loading...</h1>
 
 <script>
-fetch('/check-ip')
+fetch('/api/check-ip')  // Changed from /check-ip to /api/check-ip
   .then(res => res.json())
   .then(data => {
-    document.getElementById('result').innerText = data.code;
+    document.getElementById('result').innerText = data.ip; // Use correct data property
   })
   .catch(() => {
     document.getElementById('result').innerText = 'Error fetching data';
